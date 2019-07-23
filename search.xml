@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[markdown语法]]></title>
+    <url>%2F2019-07-23-markdown%E8%AF%AD%E6%B3%95%20copy.html</url>
+    <content type="text"><![CDATA[markdown语法 什么是markdown Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。通过简单的代码就能做出好看的排版，写博客首选(这篇文章就是markdown语法写成)。下面具体看一下markdown的语法 markdown具体语法 注：每个语法字母后面带空格 1.标题 一级标题： # 一级标题 二级标题： ## 二级标题 三级标题： ### 三级标题 效果如下，后面的标题依次类推 一级标题二级标题三级标题 2. 分割线 --- 3. 注释&gt;&gt;这是注释 这是注释 4. 无序列表*或-* 一* 二- 三- 四 效果如下 一 二 三 四 5. 有序列表直接写数字 6. 引入图片 ![名字](地址 )![jk](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3446748556,3128572954&amp;fm=27&amp;gp=0.jpg ) 效果如下 7. 输入代码块 效果如下 123public static void main(String[] args)&#123; System.out.println("Hello world");&#125; 1print("Hello world") 8. 表格 | 姓名 | 年龄 | 性别 ||----|----|----||td |td|td||td|td|td||td|td|td| >效果如下 没有样式 姓名 年龄 性别 td td td td td td td td td | 姓名 | 年龄 | 性别 ||:----:|:----:|:----:||td |td|td||td|td|td||td|td|td| >效果如下 自动居中 姓名 年龄 性别 td td td td td td td td td 9. 超链接 [名称](超链接 )[tdruid](http://www.tdruid.xyz ) 效果如下 tdruid 支持markdown语法的编辑器有很多，比如 Typora,这是一款功能比较强大的markdown编辑器，推荐大家使用今天的博客就到这里。希望大家好好学习，天天向上]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[markdown语法]]></title>
+    <url>%2F2019-07-23-markdown%E8%AF%AD%E6%B3%95.html</url>
+    <content type="text"><![CDATA[markdown语法 什么是markdown Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。通过简单的代码就能做出好看的排版，写博客首选(这篇文章就是markdown语法写成)。下面具体看一下markdown的语法 markdown具体语法 注：每个语法字母后面带空格 1.标题 一级标题： # 一级标题 二级标题： ## 二级标题 三级标题： ### 三级标题 效果如下，后面的标题依次类推 一级标题二级标题三级标题 2. 分割线 --- 3. 注释&gt;&gt;这是注释 这是注释 4. 无序列表*或-* 一* 二- 三- 四 效果如下 一 二 三 四 5. 有序列表直接写数字 6. 引入图片 ![名字](地址 )![jk](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3446748556,3128572954&amp;fm=27&amp;gp=0.jpg ) 效果如下 7. 输入代码块 效果如下 123public static void main(String[] args)&#123; System.out.println("Hello world");&#125; 1print("Hello world") 8. 表格 | 姓名 | 年龄 | 性别 ||----|----|----||td |td|td||td|td|td||td|td|td| >效果如下 没有样式 姓名 年龄 性别 td td td td td td td td td | 姓名 | 年龄 | 性别 ||:----:|:----:|:----:||td |td|td||td|td|td||td|td|td| >效果如下 自动居中 姓名 年龄 性别 td td td td td td td td td 9. 超链接 [名称](超链接 )[tdruid](http://www.tdruid.xyz ) 效果如下 tdruid 支持markdown语法的编辑器有很多，比如 Typora,这是一款功能比较强大的markdown编辑器，推荐大家使用今天的博客就到这里。希望大家好好学习，天天向上]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Git]]></title>
+    <url>%2Fgit.html</url>
+    <content type="text"><![CDATA[git的安装，一些命令与github Git1.git的安装]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+</search>
