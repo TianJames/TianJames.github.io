@@ -1788,7 +1788,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #703900;
+  background: #0e578f;
 }
 .feed-link,
 .chat {
@@ -2532,6 +2532,10 @@ ul.breadcrumb li+li:last-child {
 }
 .site-search form {
   display: none;
+}
+.posts-expand .post {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .site-nav {
   border-top: none;
