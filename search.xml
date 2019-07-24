@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Git]]></title>
     <url>%2Fgit.html</url>
-    <content type="text"><![CDATA[git的安装，一些命令与github Git1.git的安装]]></content>
+    <content type="text"><![CDATA[git的安装，一些命令与github Git1.什么是GitGit是一个分布式的管理系统，我们可以使用Git和Github来管理和保存我们的代码以及文件。 2.Git的安装直接百度搜索Git下载安装包，即可傻瓜式的安装，安装完成后鼠标右键单击桌面可以看到Git Base Here和Git Gui Here。 Git Bash是Git的命令行，Git Gui是Git的图形化工具，我们选择使用Git Bash 3.创建版本库 桌面新建一个文件夹git，打开文件夹，鼠标右键，点击Git Base Here调出Git命令行。 第一次打开需要输入个人信息 在命令行中输入 12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot; 然后输入git init 初始化版本库 1$ git init 初始化好的版本库有(master)标识 1James@LAPTOP-4UFJ74L2 MINGW64 ~/Desktop/git (master) 新建一个a.txt的文件，内容为hello world，通过 git add a.txt 命令先将文件推送到暂存区 1234James@LAPTOP-4UFJ74L2 MINGW64 ~/Desktop/git (master) $ git add a.txtwarning: LF will be replaced by CRLF in a.txt. The file will have its original line endings in your working directory. 然后使用git commit -m &#39;推送描述&#39; 将文件推送到版本库 ‘推送描述可以随便写’，但必须要写 12345James@LAPTOP-4UFJ74L2 MINGW64 ~/Desktop/git (master)$ git commit -m &apos;add a.txt&apos;[master (root-commit) 0e0677a] add a.txt 1 file changed, 1 insertion(+) create mode 100644 a.txt 这样一个文件就推送到了版本库中]]></content>
       <categories>
         <category>git</category>
       </categories>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[markdown语法]]></title>
-    <url>%2F2019-07-23-markdown%E8%AF%AD%E6%B3%95%20copy.html</url>
+    <url>%2F2019-07-23-markdown%E8%AF%AD%E6%B3%95.html</url>
     <content type="text"><![CDATA[markdown语法 什么是markdown Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。通过简单的代码就能做出好看的排版，写博客首选(这篇文章就是markdown语法写成)。下面具体看一下markdown的语法 markdown具体语法 注：每个语法字母后面带空格 1.标题 一级标题： # 一级标题 二级标题： ## 二级标题 三级标题： ### 三级标题 效果如下，后面的标题依次类推 一级标题二级标题三级标题 2. 分割线 --- 3. 注释&gt;&gt;这是注释 这是注释 4. 无序列表*或-* 一* 二- 三- 四 效果如下 一 二 三 四 5. 有序列表直接写数字 6. 引入图片 ![名字](地址 )![jk](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3446748556,3128572954&amp;fm=27&amp;gp=0.jpg ) 效果如下 7. 输入代码块 效果如下 123public static void main(String[] args)&#123; System.out.println("Hello world");&#125; 1print("Hello world") 8. 表格 | 姓名 | 年龄 | 性别 ||----|----|----||td |td|td||td|td|td||td|td|td| >效果如下 没有样式 姓名 年龄 性别 td td td td td td td td td | 姓名 | 年龄 | 性别 ||:----:|:----:|:----:||td |td|td||td|td|td||td|td|td| >效果如下 自动居中 姓名 年龄 性别 td td td td td td td td td 9. 超链接 [名称](超链接 )[tdruid](http://www.tdruid.xyz ) 效果如下 tdruid 支持markdown语法的编辑器有很多，比如 Typora,这是一款功能比较强大的markdown编辑器，推荐大家使用今天的博客就到这里。希望大家好好学习，天天向上]]></content>
       <categories>
         <category>markdown</category>
@@ -21,7 +21,7 @@
   </entry>
   <entry>
     <title><![CDATA[markdown语法]]></title>
-    <url>%2F2019-07-23-markdown%E8%AF%AD%E6%B3%95.html</url>
+    <url>%2F2019-07-23-markdown%E8%AF%AD%E6%B3%95%20copy.html</url>
     <content type="text"><![CDATA[markdown语法 什么是markdown Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。通过简单的代码就能做出好看的排版，写博客首选(这篇文章就是markdown语法写成)。下面具体看一下markdown的语法 markdown具体语法 注：每个语法字母后面带空格 1.标题 一级标题： # 一级标题 二级标题： ## 二级标题 三级标题： ### 三级标题 效果如下，后面的标题依次类推 一级标题二级标题三级标题 2. 分割线 --- 3. 注释&gt;&gt;这是注释 这是注释 4. 无序列表*或-* 一* 二- 三- 四 效果如下 一 二 三 四 5. 有序列表直接写数字 6. 引入图片 ![名字](地址 )![jk](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3446748556,3128572954&amp;fm=27&amp;gp=0.jpg ) 效果如下 7. 输入代码块 效果如下 123public static void main(String[] args)&#123; System.out.println("Hello world");&#125; 1print("Hello world") 8. 表格 | 姓名 | 年龄 | 性别 ||----|----|----||td |td|td||td|td|td||td|td|td| >效果如下 没有样式 姓名 年龄 性别 td td td td td td td td td | 姓名 | 年龄 | 性别 ||:----:|:----:|:----:||td |td|td||td|td|td||td|td|td| >效果如下 自动居中 姓名 年龄 性别 td td td td td td td td td 9. 超链接 [名称](超链接 )[tdruid](http://www.tdruid.xyz ) 效果如下 tdruid 支持markdown语法的编辑器有很多，比如 Typora,这是一款功能比较强大的markdown编辑器，推荐大家使用今天的博客就到这里。希望大家好好学习，天天向上]]></content>
       <categories>
         <category>markdown</category>
