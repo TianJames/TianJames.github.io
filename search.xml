@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL第一天]]></title>
+    <url>%2FMySQL.html</url>
+    <content type="text"><![CDATA[MySQl是使用量第二的数据库，他开源，免费，深受中小型企业的喜欢，今天学习MySQL的安装与基本配置 MySQL数据库安装网下下载安装包安装即可，勾选我同意后next,选择custom(用户自定义)。然后选择安装目录(尽量不要选择C盘，目录路径不要出现中文字符)，直接点击下一步，最后点击Finish后会进入配置界面，依次选择Detailed Configuration–&gt;Developer Machine–&gt;Multifunctional Database–&gt;然后可以点击下一步(默认端口3306不要改动)–&gt;Manual Selected Defult Character Set(选择字符集：utf8)–&gt;将Include Bin Directory in windows PATH打对号–&gt;设置密码，用户名都是root，不需要设置–&gt;点击完成 命令行输入 mysql -uroot -p 出现 welcome to the mysql monitor 即安装完成 ，如果没有出现，安装失败，需要将mysql重新卸载安装 卸载 找到MySQl的安装目录，找到my.ini文件,复制 #Path to the database rootdatadir=”C:/ProgramData/MySQL/MySQL Server 5.5/Data/“ 卸载MySQL，控制面板卸载即可，此时没有卸载干净，打开刚才复制的文件夹，删除C:/ProgramData 目录下的MySQl文件夹，这是才算卸载，就可以进行MySQL的重新安装了 配置 启动MySQL服务以管理员身份打开命令行，输入 net start mysql:启动mysql服务 net stop mysql: 关闭mysql服务 mysql登陆 mysql -uroot -p mysql登出 exit MySQL存储数据的结构mysql的数据目录在 C://ProgramData//MySQL//MySQL Server//Data MySQL的安装配置就到这里，下节学习SQL语句]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git]]></title>
     <url>%2Fgit.html</url>
     <content type="text"><![CDATA[git的安装，一些命令与github Git1.什么是GitGit是一个分布式的管理系统，我们可以使用Git和Github来管理和保存我们的代码以及文件。 2.Git的安装直接百度搜索Git下载安装包，即可傻瓜式的安装，安装完成后鼠标右键单击桌面可以看到Git Base Here和Git Gui Here。 Git Bash是Git的命令行，Git Gui是Git的图形化工具，我们选择使用Git Bash 3.创建版本库 桌面新建一个文件夹git，打开文件夹，鼠标右键，点击Git Base Here调出Git命令行。 第一次打开需要输入个人信息 在命令行中输入 12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot; 然后输入git init 初始化版本库 1$ git init 初始化好的版本库有(master)标识 1James@LAPTOP-4UFJ74L2 MINGW64 ~/Desktop/git (master) 新建一个a.txt的文件，内容为hello world，通过 git add a.txt 命令先将文件推送到暂存区 1234James@LAPTOP-4UFJ74L2 MINGW64 ~/Desktop/git (master) $ git add a.txtwarning: LF will be replaced by CRLF in a.txt. The file will have its original line endings in your working directory. 然后使用git commit -m &#39;推送描述&#39; 将文件推送到版本库 ‘推送描述可以随便写’，但必须要写 12345James@LAPTOP-4UFJ74L2 MINGW64 ~/Desktop/git (master)$ git commit -m &apos;add a.txt&apos;[master (root-commit) 0e0677a] add a.txt 1 file changed, 1 insertion(+) create mode 100644 a.txt 这样一个文件就推送到了版本库中]]></content>
