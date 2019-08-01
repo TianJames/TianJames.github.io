@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux的学习(1)]]></title>
+    <url>%2Flinux(1).html</url>
+    <content type="text"><![CDATA[今天开始学习Linux，废话不多说，直接上内容 1.目录结构 /：表示的是根的意思 /bin: (binary)存放的是一些二进制文件，在Linux中二进制文件是可以被执行的。这个目录中的命令是给普通用户使用(非超级管理员用户) /etc: Linux下所有的配置文件都会存放在etc目录 /home: 是所有非root用户家目录的一个集合 /root: root用户的家目录 /sbin: sbin表示shell bin ，里面同样也类似与bin目录，也存放了一些二进制文件，只不过这些命令只能是让超级管理员去运行 /usr: 存放着一些用户自己安装的软件，类似于windows下的Program Files目录 /var: variable(变量)，存放着会变的文件，例如Linux下的日志文件。 这些都是比较重要的目录。 2.命令行(shell) 3.基本指令通用语法格式 : 指令名称 [选项][操作的目标] 简单指令ls指令 ls [路径]: 表示列出指定路径下的文件夹和文件的名字，如果路径没有指定则列出当前路径下的。 12james@LAPTOP-4UFJ74L2:~$ lsDesktop Documents Downloads Music Pictures Public Templates Videos ls -l[路径]:表示以列表的形式列出指定路径下的文件夹和文件的名字 12345678910james@LAPTOP-4UFJ74L2:~$ ls -ltotal 0drwxr-xr-x 1 james james 4096 Jul 28 13:39 Desktopdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Documentsdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Downloadsdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Musicdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Picturesdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Publicdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Templatesdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Videos ls -la[路径]: 表示以列表的形式列出指定路径下的文件夹和文件名(包含隐藏文件，all),以.开头的为隐藏文件 123456789101112131415161718192021222324252627282930james@LAPTOP-4UFJ74L2:~$ ls -latotal 164drwxr-xr-x 1 james james 4096 Aug 1 17:59 .drwxr-xr-x 1 root root 4096 May 20 14:14 ..-rw------- 1 james james 1754 Aug 1 17:59 .ICEauthority-rw------- 1 james james 545 Aug 1 17:59 .Xauthority-rw------- 1 james james 943 Aug 1 15:15 .bash_history-rw-r--r-- 1 james james 220 May 20 14:14 .bash_logout-rw-r--r-- 1 james james 3771 May 20 14:14 .bashrcdrwxrwxrwx 1 james james 4096 Jul 28 13:54 .cachedrwxrwxrwx 1 james james 4096 Jul 28 13:57 .configdrwx------ 1 james james 4096 Jul 28 13:39 .dbusdrwx------ 1 james james 4096 Aug 1 17:59 .gnupgdrwx------ 1 james james 4096 Jul 28 13:39 .gvfsdrwxrwxrwx 1 james james 4096 Jul 28 13:39 .local-rw-r--r-- 1 james james 807 May 20 14:14 .profile-rw------- 1 james james 7 Jul 28 14:17 .python_history-rw-r--r-- 1 james james 0 May 20 14:17 .sudo_as_admin_successful-rw------- 1 james james 10589 Aug 1 15:15 .viminfodrwx------ 1 james james 4096 Aug 1 17:59 .vnc-rw------- 1 james james 81127 Aug 1 18:00 .xsession-errors-rw-rw-rw- 1 james james 42275 May 20 14:26 .zcompdumpdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Desktopdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Documentsdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Downloadsdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Musicdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Picturesdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Publicdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Templatesdrwxr-xr-x 1 james james 4096 Jul 28 13:39 Videos clear指令 表示的含义: 清空当前屏幕中全部的命令(其实实质是没有清空，只不过是顶到上面去了) su指令 作用: 切换用户 语法: su 需要切换到的用户名(用户名可以不写，则表示切换到root用户) 当切换到的用户权限如果比当前用户的权限低，可以直接切换，不需要密码，可直接切换；反之，如果从低到高切换则要求输入被切换到的账号对应的密码 cd指令 作用: 切换目录(change directory) 语法: cd 需要切换到的路径(路径可以是相对路径，也可以是绝对路径) 路径可以写可以不写，不写则表示切换到当前用户的家目录 在切换路径或者后期打开一个文件的时候可以多使用tab键(自动补全命令) 低级用户没有权限访问高级用户相关的资源 pwd指令 作用: 打印当前的工作路径 12james@LAPTOP-4UFJ74L2:~$ pwd/home/james 文档的操作指令创建文件 命令:touch 语法: touch 路径 例如: 在当前路径下创建一个文件名字叫a.txt1touch a.txt 创建文件夹 命令: mkdir 语法: mkdir 文件夹路径 文件夹与文件不能同名 复制 命令: cp 语法: cp [-r]需要复制的文档 需要保存的位置 移动重命名删除文档的查看指令tail指令 作用: 查看一个文件的末n行 语法: tail-n 文件的路径 说明: -n可以不写，不写，默认表示10行 head指令 作用: 查看一个文件的头n行 语法: head-n 文件的路径 说明: -n可以不写，不写，默认表示10行 cat指令 作用: 查看某个文件的全部内容 语法: cat 文件的路径1 文件路径2 文件路径3... tac指令 作用: 倒序查看某个文件的全部内容 语法: tac 文件的路径1 文件路径2 文件路径3... vim指令 作用: 打开文件，显示内容 语法: vim 文件的路径 关机重启指令reboot指令 作用: 重启计算机 语法: reboot 部分情况下(除非自开机以来，只有当前一个普通用户登陆过)，普通用户无法执行reboot命令 shutdown指令 作用: 关机 语法: shutdown -h 时间 时间常见的值: now: 表示立即关机 +m : m表示数字，例如+5，则表示五分钟之后关机 halt指令 作用: 关机(关闭内存) 语法: halt]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL的学习(3)]]></title>
     <url>%2FMySQL(3).html</url>
     <content type="text"></content>
@@ -46,7 +57,7 @@
   </entry>
   <entry>
     <title><![CDATA[markdown语法]]></title>
-    <url>%2F2019-07-23-markdown%E8%AF%AD%E6%B3%95.html</url>
+    <url>%2Fmarkdown%E8%AF%AD%E6%B3%95.html</url>
     <content type="text"><![CDATA[markdown语法 什么是markdown Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。通过简单的代码就能做出好看的排版，写博客首选(这篇文章就是markdown语法写成)。下面具体看一下markdown的语法 markdown具体语法 注：每个语法字母后面带空格 1.标题 一级标题： # 一级标题 二级标题： ## 二级标题 三级标题： ### 三级标题 效果如下，后面的标题依次类推 一级标题二级标题三级标题 2. 分割线 --- 3. 注释&gt;&gt;这是注释 这是注释 4. 无序列表*或-* 一* 二- 三- 四 效果如下 一 二 三 四 5. 有序列表直接写数字 6. 引入图片 ![名字](地址 )![jk](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3446748556,3128572954&amp;fm=27&amp;gp=0.jpg ) 效果如下 7. 输入代码块 效果如下 123public static void main(String[] args)&#123; System.out.println("Hello world");&#125; 1print("Hello world") 8. 表格 | 姓名 | 年龄 | 性别 ||----|----|----||td |td|td||td|td|td||td|td|td| >效果如下 没有样式 姓名 年龄 性别 td td td td td td td td td | 姓名 | 年龄 | 性别 ||:----:|:----:|:----:||td |td|td||td|td|td||td|td|td| >效果如下 自动居中 姓名 年龄 性别 td td td td td td td td td 9. 超链接 [名称](超链接 )[tdruid](http://www.tdruid.xyz ) 效果如下 tdruid 支持markdown语法的编辑器有很多，比如 Typora,这是一款功能比较强大的markdown编辑器，推荐大家使用今天的博客就到这里。希望大家好好学习，天天向上]]></content>
       <categories>
         <category>markdown</category>
