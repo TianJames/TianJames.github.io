@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL的学习(4)]]></title>
+    <url>%2FMySQL(4).html</url>
+    <content type="text"><![CDATA[这节学习MySQL的表的约束,多表操作和三大范式 约束 概念:对表中的数据进行限定,保证数据的正确性,有效性和完整性 主键约束:primary key 含义:非空且唯一 一张表只能有一个字段为主键 主键就是表中记录的唯一标识 在创建表时添加主键约束 1234create table stu( id int primary key, name varchar(20)); 创建完表后添加主键 1ALTER TABLE stu MODIFY id INT PRIMARY KEY; 删除主键约束 1alter table stu drop primary key; 自动增长 如果某一列是数值类型的,使用 auto_increment 来完成值的自动增长 在创建表时,添加主键约束,并且完成主键自动增长 1234create table stu( id int primary key auto_increment, name varchar(20)); 添加自动增长 1alter table stu modify id int auto_increment; 删除自动增长 1alter table stu modify id int; 非空约束:not null,值不能为 null 创建表时添加约束 1234create table stu( id int, name varchar(20) not null); 创建表完后添加非空约束 1ALTER TABLE stu MODIFY NAME VARCHAR(20) NOT NULL; 删除非空约束 1ALTER TABLE stu MODIFY NAME VARCHAR(20); 唯一约束:unique,值不能重复 创建表时添加唯一约束 1234CREATE TABLE stu( id INT, phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束); 创建表后添加唯一约束 1alter table stu modify phone_number varchar(20) unique; 删除唯一约束 1ALTER TABLE stu DROP INDEX phone_number; MySQL中,唯一约束限定列的值可以有多个null 外键约束:foreign key 在创建表时添加外键 12345create table 表名( ... 外键列 constraint 外键名称 foreign key 外键列名称 references 主表名称(主表列名称)); 例如: 先创建部门的表 123456CREATE TABLE department( id INT PRIMARY KEY AUTO_INCREMENT, dep_name VARCHAR(20), dep_location VARCHAR(20) );INSERT INTO department VALUES(NULL, '研发部','广州'),(NULL, '销售部', '深圳'); 在创建员工表,并添加外键 1234567891011121314CREATE TABLE employee( id INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(20), age INT, dep_id INT, CONSTRAINT emp_dept_fk FOREIGN KEY (dep_id) REFERENCES department(id));INSERT INTO employee (NAME, age, dep_id) VALUES ('张三', 20, 1); INSERT INTO employee (NAME, age, dep_id) VALUES ('李四', 21, 1); INSERT INTO employee (NAME, age, dep_id) VALUES ('王五', 20, 1); INSERT INTO employee (NAME, age, dep_id) VALUES ('老王', 20, 2); INSERT INTO employee (NAME, age, dep_id) VALUES ('大王', 22, 2); INSERT INTO employee (NAME, age, dep_id) VALUES ('小王', 18, 2); 删除外键 1alter table employee drop foreign key emp_dept_fk; 添加外键 1alter table employee add constraint emp_dept_fk foreign key (dep_id) references department(id); 级联操作 添加级联操作alter table employee add constraint emp_dept_fk foreign key (dep_id) references department(id) on update cascade; 级联更新: on update cascade 级联删除: on delete cascade]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ajax(1)]]></title>
     <url>%2Fajax(1).html</url>
     <content type="text"><![CDATA[这节学习ajax]]></content>
