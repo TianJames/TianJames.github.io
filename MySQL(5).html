@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Druid">
 <meta property="og:description" content="这节学习多表查询,子查询,事务,DCL(用户管理与权限管理)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-11T04:46:17.082Z">
+<meta property="og:updated_time" content="2019-08-12T10:24:13.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL的学习(5)">
 <meta name="twitter:description" content="这节学习多表查询,子查询,事务,DCL(用户管理与权限管理)">
@@ -416,7 +416,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-11 12:46:17" itemprop="dateModified" datetime="2019-08-11T12:46:17+08:00">2019-08-11</time>
+                <time title="修改时间：2019-08-12 18:24:13" itemprop="dateModified" datetime="2019-08-12T18:24:13+08:00">2019-08-12</time>
               </span>
             
           
@@ -465,7 +465,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">3.6k</span>
+              <span title="本文字数">4.6k</span>
             </span>
           
 
@@ -477,7 +477,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">3 分钟</span>
+              <span title="阅读时长">4 分钟</span>
             </span>
           
 
@@ -552,7 +552,26 @@
 </ul>
 </li>
 </ul>
-<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="事务的基本介绍"><a href="#事务的基本介绍" class="headerlink" title="事务的基本介绍"></a>事务的基本介绍</h3><ul>
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><ul>
+<li><p>概念: 查询中嵌套查询,称嵌套查询为子查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查询工资最高的员工信息</span></span><br><span class="line"><span class="comment">-- 1 查询最高的工资是多少 9000</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">MAX</span>(salary) <span class="keyword">FROM</span> emp;</span><br><span class="line">			</span><br><span class="line"><span class="comment">-- 2 查询员工信息，并且工资等于9000的</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> emp.<span class="string">`salary`</span> = <span class="number">9000</span>;</span><br><span class="line">			</span><br><span class="line"><span class="comment">-- 一条sql就完成这个操作。子查询</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> emp.<span class="string">`salary`</span> = (<span class="keyword">SELECT</span> <span class="keyword">MAX</span>(salary) <span class="keyword">FROM</span> emp);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子查询不同情况</p>
+<ol>
+<li><p>子查询的结果可以是单行单列的</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">-- 子查询可以作为条件，使用运算符去判断。 </span></span><br><span class="line">   <span class="comment">--  运算符： &gt; &gt;= &lt; &lt;= =</span></span><br><span class="line">   <span class="comment">-- 查询员工工资小于平均工资的人</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> emp.salary &lt; (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(salary) <span class="keyword">FROM</span> emp);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询的结果是多行单列的</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">-- 子查询可以作为条件，使用运算符in来判断</span></span><br><span class="line"><span class="comment">-- 查询'财务部'和'市场部'所有的员工信息</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span> <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> <span class="keyword">NAME</span> = <span class="string">'财务部'</span> <span class="keyword">OR</span> <span class="keyword">NAME</span> = <span class="string">'市场部'</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> dept_id = <span class="number">3</span> <span class="keyword">OR</span> dept_id = <span class="number">2</span>;</span><br><span class="line"><span class="comment">-- 子查询</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> dept_id <span class="keyword">IN</span> (<span class="keyword">SELECT</span> <span class="keyword">id</span> <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> <span class="keyword">NAME</span> = <span class="string">'财务部'</span> <span class="keyword">OR</span> <span class="keyword">NAME</span> = <span class="string">'市场部'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子查询的结果是多行多列的</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">-- 子查询可以作为一张虚拟表参与查询</span></span><br><span class="line"><span class="comment">-- 查询员工入职日期是2011-11-11日之后的员工信息和部门信息</span></span><br><span class="line"><span class="comment">-- 子查询</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> dept t1 ,(<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> emp.<span class="string">`join_date`</span> &gt; <span class="string">'2011-11-11'</span>) t2</span><br><span class="line"><span class="keyword">WHERE</span> t1.id = t2.dept_id;</span><br><span class="line">			</span><br><span class="line"><span class="comment">-- 普通内连接</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp t1,dept t2 <span class="keyword">WHERE</span> t1.<span class="string">`dept_id`</span> = t2.<span class="string">`id`</span> <span class="keyword">AND</span> t1.<span class="string">`join_date`</span> &gt;  <span class="string">'2011-11-11'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="事务的基本介绍"><a href="#事务的基本介绍" class="headerlink" title="事务的基本介绍"></a>事务的基本介绍</h3><ul>
 <li><p>什么是事务:如果一个包含多个步骤的业务操作,被事务管理,那么这些操作要么同时成功,要么同时失败</p>
 </li>
 <li><p>操作: </p>
